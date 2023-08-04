@@ -1,0 +1,1 @@
+9999999999{"name": "Flask-Cors", "version": "4.0.0", "summary": "A Flask extension adding a decorator for CORS support", "platform": "any", "requires_dist": ["Flask (>=0.9)"], "requires_python": "", "files": [], "_cache_version": "1.0.0"}

@@ -1,0 +1,80 @@
+[
+    {
+      "name": "Players",
+      "endpoint": "/players",
+      "description": "Returns a list of all players in the league in alphabetical order by last name.",
+      "method": "GET"
+    },
+    {
+      "name": "Points Per Game",
+      "endpoint": "/ppg",
+      "description": "Returns a list of players ranked by points per game in descending order.",
+      "method": "GET"
+    },
+    {
+      "name": "Assists Per Game",
+      "endpoint": "/apg",
+      "description": "Returns a list of players ranked by assists per game in descending order.",
+      "method": "GET"
+    },
+    {
+      "name": "Rebounds Per Game",
+      "endpoint": "/rpg",
+      "description": "Returns a list of players ranked by rebounds per game in descending order.",
+      "method": "GET"
+    },
+    {
+      "name": "Offensive Rebounds Per Game",
+      "endpoint": "/orpg",
+      "description": "Returns a list of players ranked by offensive rebounds per game in descending order.",
+      "method": "GET"
+    },
+    {
+      "name": "Defensive Rebounds Per Game",
+      "endpoint": "/drpg",
+      "description": "Returns a list of players ranked by defensive rebounds per game in descending order.",
+      "method": "GET"
+    },
+    {
+      "name": "Blocks Per Game",
+      "endpoint": "/bpg",
+      "description": "Returns a list of players ranked by blocks per game in descending order.",
+      "method": "GET"
+    },
+    {
+      "name": "Steals Per Game",
+      "endpoint": "/spg",
+      "description": "Returns a list of players ranked by steals per game in descending order.",
+      "method": "GET"
+    },
+    {
+      "name": "Turnovers Per Game",
+      "endpoint": "/tpg",
+      "description": "Returns a list of players ranked by turnovers per game in descending order.",
+      "method": "GET"
+    },
+    {
+      "name": "Fouls Per Game",
+      "endpoint": "/fpg",
+      "description": "Returns a list of players ranked by fouls per game in descending order.",
+      "method": "GET"
+    },
+    {
+      "name": "Field Goals Per Game",
+      "endpoint": "/fgp",
+      "description": "Returns a list of players ranked by field goal percentage in descending order.",
+      "method": "GET"
+    },
+    {
+      "name": "3PT Field Goals Per Game",
+      "endpoint": "/3fgp",
+      "description": "Returns a list of players ranked by three-point field goal percentage in descending order.",
+      "method": "GET"
+    },
+    {
+      "name": "Free Throws Per Game",
+      "endpoint": "/ftp",
+      "description": "Returns a list of players ranked by free throw percentage in descending order.",
+      "method": "GET"
+    }
+  ]

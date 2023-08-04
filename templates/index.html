@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NBA Backend API Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/index.css">
+  <link rel="stylesheet" href="static/code.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome to the NBA Backend API Documentation</h1>
+      <p>This documentation provides detailed information about the NBA Backend API. The API allows you to access various player statistics in different formats. Explore the endpoints below to retrieve the data you need.</p>
+    </header>
+
+    <section id="endpoints">
+      <h2>Endpoints</h2>
+      <p>Here are the available endpoints for retrieving player statistics:</p>
+
+      <div class="endpoint">
+        <h3>/players</h3>
+        <p>Returns a list of all players in the league in alphabetical order by last name.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /players</code></pre>
+        <h4>Example Usage (JavaScript):</h4>
+        <pre><code class="language-js">// Make a GET request to retrieve player data
+fetch('/players')
+  .then(response => response.json())
+  .then(data => {
+    // Process the response data
+    console.log(data.players); // Print the list of players
+    // Your code to handle the data goes here
+  })
+  .catch(error => {
+    // Handle any errors that occurred during the request
+    console.error('Error:', error);
+  });</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 1,
+      "firstName": "LeBron",
+      "lastName": "James",
+      "team": "Los Angeles Lakers",
+      "position": "Forward",
+      "jerseyNumber": 6
+    },
+    {
+      "id": 2,
+      "firstName": "Kevin",
+      "lastName": "Durant",
+      "team": "Brooklyn Nets",
+      "position": "Forward",
+      "jerseyNumber": 7
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+      <div class="endpoint">
+        <h3>/ppg</h3>
+        <p>Returns a list of players ranked by points per game in descending order.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /ppg</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 25,
+      "firstName": "Stephen",
+      "lastName": "Curry",
+      "team": "Golden State Warriors",
+      "position": "Guard",
+      "jerseyNumber": 30,
+      "pointsPerGame": 32.0
+    },
+    {
+      "id": 4,
+      "firstName": "Bradley",
+      "lastName": "Beal",
+      "team": "Washington Wizards",
+      "position": "Guard",
+      "jerseyNumber": 3,
+      "pointsPerGame": 30.5
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+      <div class="endpoint">
+        <h3>/apg</h3>
+        <p>Returns a list of players ranked by assists per game in descending order.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /apg</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 10,
+      "firstName": "Chris",
+      "lastName": "Paul",
+      "team": "Phoenix Suns",
+      "position": "Guard",
+      "jerseyNumber": 3,
+      "assistsPerGame": 10.2
+    },
+    {
+      "id": 13,
+      "firstName": "Russell",
+      "lastName": "Westbrook",
+      "team": "Los Angeles Lakers",
+      "position": "Guard",
+      "jerseyNumber": 0,
+      "assistsPerGame": 10.1
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+      <div class="endpoint">
+        <h3>/rpg</h3>
+        <p>Returns a list of players ranked by rebounds per game in descending order.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /rpg</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 23,
+      "firstName": "Rudy",
+      "lastName": "Gobert",
+      "team": "Utah Jazz",
+      "position": "Center",
+      "jerseyNumber": 27,
+      "reboundsPerGame": 14.3
+    },
+    {
+      "id": 42,
+      "firstName": "Domantas",
+      "lastName": "Sabonis",
+      "team": "Indiana Pacers",
+      "position": "Forward",
+      "jerseyNumber": 11,
+      "reboundsPerGame": 13.9
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+      <div class="endpoint">
+        <h3>/orpg</h3>
+        <p>Returns a list of players ranked by offensive rebounds per game in descending order.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /orpg</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 23,
+      "firstName": "Rudy",
+      "lastName": "Gobert",
+      "team": "Utah Jazz",
+      "position": "Center",
+      "jerseyNumber": 27,
+      "offensiveReboundsPerGame": 4.1
+    },
+    {
+      "id": 42,
+      "firstName": "Domantas",
+      "lastName": "Sabonis",
+      "team": "Indiana Pacers",
+      "position": "Forward",
+      "jerseyNumber": 11,
+      "offensiveReboundsPerGame": 3.8
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+      <div class="endpoint">
+        <h3>/drpg</h3>
+        <p>Returns a list of players ranked by defensive rebounds per game in descending order.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /drpg</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 23,
+      "firstName": "Rudy",
+      "lastName": "Gobert",
+      "team": "Utah Jazz",
+      "position": "Center",
+      "jerseyNumber": 27,
+      "defensiveReboundsPerGame": 10.2
+    },
+    {
+      "id": 42,
+      "firstName": "Domantas",
+      "lastName": "Sabonis",
+      "team": "Indiana Pacers",
+      "position": "Forward",
+      "jerseyNumber": 11,
+      "defensiveReboundsPerGame": 10.1
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+      <div class="endpoint">
+        <h3>/bpg</h3>
+        <p>Returns a list of players ranked by blocks per game in descending order.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /bpg</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 27,
+      "firstName": "Myles",
+      "lastName": "Turner",
+      "team": "Indiana Pacers",
+      "position": "Center",
+      "jerseyNumber": 33,
+      "blocksPerGame": 3.8
+    },
+    {
+      "id": 9,
+      "firstName": "Hassan",
+      "lastName": "Whiteside",
+      "team": "Sacramento Kings",
+      "position": "Center",
+      "jerseyNumber": 20,
+      "blocksPerGame": 3.2
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+      <div class="endpoint">
+        <h3>/spg</h3>
+        <p>Returns a list of players ranked by steals per game in descending order.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /spg</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 11,
+      "firstName": "Jimmy",
+      "lastName": "Butler",
+      "team": "Miami Heat",
+      "position": "Forward",
+      "jerseyNumber": 22,
+      "stealsPerGame": 2.3
+    },
+    {
+      "id": 8,
+      "firstName": "Ben",
+      "lastName": "Simmons",
+      "team": "Philadelphia 76ers",
+      "position": "Guard",
+      "jerseyNumber": 25,
+      "stealsPerGame": 2.1
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+      <div class="endpoint">
+        <h3>/tpg</h3>
+        <p>Returns a list of players ranked by turnovers per game in descending order.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /tpg</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 5,
+      "firstName": "Luka",
+      "lastName": "Dončić",
+      "team": "Dallas Mavericks",
+      "position": "Guard",
+      "jerseyNumber": 77,
+      "turnoversPerGame": 4.6
+    },
+    {
+      "id": 25,
+      "firstName": "Stephen",
+      "lastName": "Curry",
+      "team": "Golden State Warriors",
+      "position": "Guard",
+      "jerseyNumber": 30,
+      "turnoversPerGame": 4.2
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+      <div class="endpoint">
+        <h3>/fpg</h3>
+        <p>Returns a list of players ranked by fouls per game in descending order.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /fpg</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 31,
+      "firstName": "Zion",
+      "lastName": "Williamson",
+      "team": "New Orleans Pelicans",
+      "position": "Forward",
+      "jerseyNumber": 1,
+      "foulsPerGame": 4.9
+    },
+    {
+      "id": 16,
+      "firstName": "Joel",
+      "lastName": "Embiid",
+      "team": "Philadelphia 76ers",
+      "position": "Center",
+      "jerseyNumber": 21,
+      "foulsPerGame": 4.6
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+      <div class="endpoint">
+        <h3>/fgp</h3>
+        <p>Returns a list of players ranked by field goal percentage in descending order.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /fgp</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 32,
+      "firstName": "Rudy",
+      "lastName": "Gay",
+      "team": "Utah Jazz",
+      "position": "Forward",
+      "jerseyNumber": 8,
+      "fieldGoalPercentage": 0.654
+    },
+    {
+      "id": 18,
+      "firstName": "Giannis",
+      "lastName": "Antetokounmpo",
+      "team": "Milwaukee Bucks",
+      "position": "Forward",
+      "jerseyNumber": 34,
+      "fieldGoalPercentage": 0.627
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+      <div class="endpoint">
+        <h3>/3fgp</h3>
+        <p>Returns a list of players ranked by three-point field goal percentage in descending order.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /3fgp</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 19,
+      "firstName": "Joe",
+      "lastName": "Harris",
+      "team": "Brooklyn Nets",
+      "position": "Forward",
+      "jerseyNumber": 12,
+      "threePointFieldGoalPercentage": 0.491
+    },
+    {
+      "id": 29,
+      "firstName": "Duncan",
+      "lastName": "Robinson",
+      "team": "Miami Heat",
+      "position": "Forward",
+      "jerseyNumber": 55,
+      "threePointFieldGoalPercentage": 0.478
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+      <div class="endpoint">
+        <h3>/ftp</h3>
+        <p>Returns a list of players ranked by free throw percentage in descending order.</p>
+        <h4>Usage:</h4>
+        <pre><code class="language-json">GET /ftp</code></pre>
+        <h4>Example Response:</h4>
+        <pre><code class="language-json">{
+  "players": [
+    {
+      "id": 30,
+      "firstName": "Damian",
+      "lastName": "Lillard",
+      "team": "Portland Trail Blazers",
+      "position": "Guard",
+      "jerseyNumber": 0,
+      "freeThrowPercentage": 0.928
+    },
+    {
+      "id": 1,
+      "firstName": "LeBron",
+      "lastName": "James",
+      "team": "Los Angeles Lakers",
+      "position": "Forward",
+      "jerseyNumber": 6,
+      "freeThrowPercentage": 0.921
+    },
+    ...
+  ]
+}</code></pre>
+      </div>
+
+    </section>
+
+    <footer>
+      <p>If you have any questions or need further assistance, please contact us at <a href="mailto:deez@nuts.com">ethan.e.gutierrez@nuts.com</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>
